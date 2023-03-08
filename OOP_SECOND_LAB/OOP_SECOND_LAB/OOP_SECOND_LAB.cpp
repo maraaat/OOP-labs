@@ -126,50 +126,58 @@ public:
     }
 };
 
-
 int main()
 {
     ///// static objects /////
-    /*Vector ab;
+
+    cout << "Static" << endl;
+    Vector ab;
     Vector cd(1, 2, 3, 4);
     Vector ef(cd); //констр копирования
     cd.length();
-    ef.add(cd); */ 
+    ef.add(cd);  
 
-
+    cout << "Dynamic" << endl;
     ////// dynamic objects /////
 
-    /*Vector* qw = new Vector;
-    Vector *er = new Vector(1, 2, 3, 4);
+    Vector* qw = new Vector;
+    Vector* er = new Vector(1, 2, 3, 4);
     Vector* ty = new Vector(*er);
+    er->length();
+    ty->add(*er);
     ty->reset();
+    cout << "Delete Dynamic" << endl;
 
     delete qw;
     delete er; 
     delete ty;
-    */
-     
-
+    
     ///// daughter class /////
     
-    /*ColoredVector* ab = new ColoredVector(1, 2, 3, 9, 6);
- 
-    delete ab;
-    */
+    cout << "Creating a daughter class" << endl; 
+    ColoredVector* qz = new ColoredVector(1, 2, 3, 9, 6);
+    ColoredVector* ww = new ColoredVector(1, 3, 1, 0, 5);
+    qz->length();
+    qz->add(*ww);
+    cout << endl << "Delete a daughter classes" << endl;
+    delete qz;
+    delete ww;
 
     //Set in base class daughter class
-   /* Vector* ab = new ColoredVector(1, 5, 7, 2, 1);
-    ColoredVector* cd = new ColoredVector(1, 2, 3, 2, 1);
-    delete ab;
-    delete cd;*/
+    cout << "Set in base class daughter class" << endl;
+    Vector* aa = new ColoredVector(1, 5, 7, 2, 1);
+    ColoredVector* bb = new ColoredVector(1, 2, 3, 2, 1);
+    delete aa;
+    delete bb;
      
-    VectorToSection* ab = new VectorToSection;
-    VectorToSection* qw = new VectorToSection(4, 5, 3, 1, 5, 9, 7, 2);
-    VectorToSection* cd = new VectorToSection(*qw);
-    VectorToSection* ef = new VectorToSection(1,2,3,4,5,6,7,8);
+    cout << "Composition" << endl;
+    VectorToSection* ee = new VectorToSection;
+    VectorToSection* rr = new VectorToSection(4, 5, 3, 1, 5, 9, 7, 2);
+    VectorToSection* tt = new VectorToSection(*rr);
+    VectorToSection* yy = new VectorToSection(1,2,3,4,5,6,7,8);
 
-    delete ab;
-    delete qw;
-    delete cd;
-    delete ef;
+    delete ee;
+    delete rr;
+    delete tt;
+    delete yy;
 }
