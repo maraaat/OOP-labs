@@ -11,7 +11,7 @@ protected:
 public:
 
     Vector() {
-        cout << "Vector" << endl;;
+        cout << "Zero vector" << endl;;
         x = y = 0;
         printf_s("Vector = { %d ; %d }\n", x, y);
     }
@@ -29,7 +29,7 @@ public:
     }
     
     ~Vector() {
-        cout << "Bye Vector" << endl;
+        printf_s("Vector {%d ; %d} is deleted\n", x ,y);
     }
 
     void length() {
@@ -38,9 +38,13 @@ public:
     }
 
     void add(const Vector& a) {
-        printf_s("Vector 1 + Vector 2 = { %d ; %d }", x + a.x, y + a.y);
+        printf_s("Vector 1 + Vector 2 = { %d ; %d }\n", x + a.x, y + a.y);
     }
+    void reset();
 };
+void Vector::reset() {
+    x = 0; y = 0;
+}
 
 
 class ColoredVector: public Vector {
@@ -92,14 +96,14 @@ protected:
 public:
 
     VectorToSection() {
-        cout << "Creating section: " << endl;
+        printf_s("Creating zero section\n");
         ab = new Vector;
         cd = new Vector;
 
     }
 
     VectorToSection(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
-        cout << "Creating section: " << endl;
+        cout << "Creating section from coord: " << endl;
         ab = new Vector( x1,  y1,  x2,  y2);
         cd = new Vector( x3,  y3,  x4,  y4);
         printf_s("Vector = ( %d ; %d ) ( %d ; %d )\n", x2-x1, y2-y1, x4-x3, y4-y3);
@@ -108,7 +112,7 @@ public:
     VectorToSection(const VectorToSection& a) {
         /*ab = a.ab;
         cd = a.cd;*/
-        cout << "Creating section" << endl;
+        cout << "Creating copy section" << endl;
         ab = new Vector(*(a.ab));
         cd = new Vector(*(a.cd));
 
@@ -118,37 +122,54 @@ public:
     ~VectorToSection() {
         delete ab;
         delete cd;
-        cout << "Bye VectorToPoint" << endl;
+        cout << "VectorToSection is deleted" << endl;
     }
 };
 
 
 int main()
 {
-//    //static
-//    Vector ab;
-//    Vector cd(1, 2, 3, 4);
-//    Vector ef(cd);
-//    cd.length();
-//    ef.add(cd);
-//    //dynamic
-//    Vector *qw = new Vector;
-//    Vector *er = new Vector(1, 2, 3, 4);
-//    Vector* ty = new Vector(*er);
-//
-//    delete qw;
-//    delete er; 
-//    delete ty;
-      
-  //  ColoredVector* ab = new ColoredVector(1, 2, 3, 4, 6);
+    ///// static objects /////
+    /*Vector ab;
+    Vector cd(1, 2, 3, 4);
+    Vector ef(cd); //констр копирования
+    cd.length();
+    ef.add(cd); */ 
+
+
+    ////// dynamic objects /////
+
+    /*Vector* qw = new Vector;
+    Vector *er = new Vector(1, 2, 3, 4);
+    Vector* ty = new Vector(*er);
+    ty->reset();
+
+    delete qw;
+    delete er; 
+    delete ty;
+    */
+     
+
+    ///// daughter class /////
+    
+    /*ColoredVector* ab = new ColoredVector(1, 2, 3, 9, 6);
  
-  //  delete ab;
-
-
-    VectorToSection* ab = new VectorToSection;
-    VectorToSection* cd = new VectorToSection(*ab);
-    VectorToSection* ef = new VectorToSection(1,2,3,4,5,6,7,8);
     delete ab;
+    */
+
+    //Set in base class daughter class
+   /* Vector* ab = new ColoredVector(1, 5, 7, 2, 1);
+    ColoredVector* cd = new ColoredVector(1, 2, 3, 2, 1);
+    delete ab;
+    delete cd;*/
+     
+    VectorToSection* ab = new VectorToSection;
+    VectorToSection* qw = new VectorToSection(4, 5, 3, 1, 5, 9, 7, 2);
+    VectorToSection* cd = new VectorToSection(*qw);
+    VectorToSection* ef = new VectorToSection(1,2,3,4,5,6,7,8);
+
+    delete ab;
+    delete qw;
     delete cd;
     delete ef;
 }
