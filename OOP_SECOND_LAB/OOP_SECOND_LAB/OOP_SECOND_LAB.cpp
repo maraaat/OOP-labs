@@ -4,14 +4,13 @@
 using namespace std;
 
 class Vector {
-
 protected:
     int x, y;
     double dlina;
 public:
 
     Vector() {
-        cout << "Zero vector" << endl;;
+        //cout << "Zero vector" << endl;;
         x = y = 0;
         printf_s("Vector = { %d ; %d }\n", x, y);
     }
@@ -42,6 +41,7 @@ public:
     }
     void reset();
 };
+
 void Vector::reset() {
     x = 0; y = 0;
 }
@@ -130,14 +130,14 @@ int main()
 {
     ///// static objects /////
 
-    cout << "Static" << endl;
+    cout << "Static" << endl ;
     Vector ab;
     Vector cd(1, 2, 3, 4);
     Vector ef(cd); //констр копирования
     cd.length();
     ef.add(cd);  
 
-    cout << "Dynamic" << endl;
+    cout << "\nDynamic" << endl;
     ////// dynamic objects /////
 
     Vector* qw = new Vector;
@@ -146,7 +146,7 @@ int main()
     er->length();
     ty->add(*er);
     ty->reset();
-    cout << "Delete Dynamic" << endl;
+    cout << "\nDelete Dynamic" << endl;
 
     delete qw;
     delete er; 
@@ -154,23 +154,23 @@ int main()
     
     ///// daughter class /////
     
-    cout << "Creating a daughter class" << endl; 
+    cout << "\nCreating a daughter class" << endl; 
     ColoredVector* qz = new ColoredVector(1, 2, 3, 9, 6);
     ColoredVector* ww = new ColoredVector(1, 3, 1, 0, 5);
     qz->length();
     qz->add(*ww);
-    cout << endl << "Delete a daughter classes" << endl;
+    cout << endl << "\nDelete a daughter classes" << endl;
     delete qz;
     delete ww;
 
     //Set in base class daughter class
-    cout << "Set in base class daughter class" << endl;
+    cout << "\nSet in base class daughter class" << endl;
     Vector* aa = new ColoredVector(1, 5, 7, 2, 1);
     ColoredVector* bb = new ColoredVector(1, 2, 3, 2, 1);
     delete aa;
     delete bb;
      
-    cout << "Composition" << endl;
+    cout << "\nComposition" << endl;
     VectorToSection* ee = new VectorToSection;
     VectorToSection* rr = new VectorToSection(4, 5, 3, 1, 5, 9, 7, 2);
     VectorToSection* tt = new VectorToSection(*rr);
