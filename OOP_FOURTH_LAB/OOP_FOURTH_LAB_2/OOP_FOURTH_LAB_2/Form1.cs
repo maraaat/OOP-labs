@@ -118,9 +118,9 @@ namespace OOP_FOURTH_LAB_2
 
     public class Model
     {
-        private int A;
-        private int B;
-        private int C;
+        private int A = 0;
+        private int B = 1;
+        private int C = 100;
 
         public System.EventHandler observers;
         public int checkvalue(int value)

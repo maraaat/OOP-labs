@@ -35,12 +35,17 @@ namespace OOP_FOURTH_LAB
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (cb2.Checked && cb1.Checked)
+            //if (checkercontrol == true)
+            //{
+            //    elements.MakeSelectedToOnlyOneMode(circle.figurecreate(e.X, e.Y));
+            //    pictureBox1.Invalidate();
+            //}
+             if (cb2.Checked && cb1.Checked || checkercontrol == true && cb1.Checked)
             {
                 elements.MakeSelectedToOnlyOneMode(circle.figurecreate(e.X, e.Y));
                 pictureBox1.Invalidate();
             }
-            else if (cb2.Checked)
+            else if (cb2.Checked || checkercontrol == true)
             {
                 elements.MakeSelected(circle.figurecreate(e.X, e.Y));
                 pictureBox1.Invalidate();
@@ -72,11 +77,37 @@ namespace OOP_FOURTH_LAB
 
         }
 
-
-        private void button2_Click(object sender, EventArgs e)
+        bool checkercontrol = false;
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            elements.DeleteSelectedElements();
-            circle.ClearBack();
+            if(e.KeyCode == Keys.Delete)
+            {
+                elements.DeleteSelectedElements();
+                circle.ClearBack();
+            }
+
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                checkercontrol = true;
+                //elements.MakeSelected(circle.figurecreate(MousePosition.X, MousePosition.Y));
+                //pictureBox1.Invalidate();
+            }
+
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey)
+            {
+                checkercontrol = false;
+                //elements.MakeSelected(circle.figurecreate(MousePosition.X, MousePosition.Y));
+                //pictureBox1.Invalidate();
+            }
+        }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
         
