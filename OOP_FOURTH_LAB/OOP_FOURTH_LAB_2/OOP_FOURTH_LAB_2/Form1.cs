@@ -15,14 +15,14 @@ namespace OOP_FOURTH_LAB_2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            model1.setA(Properties.Settings.Default.A);
-            model1.setB(Properties.Settings.Default.B);
+            model1.setA(Properties.Settings.Default.A); //установка данных, сохраненных при закрытии
+
             model1.setC(Properties.Settings.Default.C);
         }
         private void MVC_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Properties.Settings.Default.A = model1.getA();
-            Properties.Settings.Default.B = model1.getB();
+            Properties.Settings.Default.A = model1.getA(); //загрузка данных при закрытии
+
             Properties.Settings.Default.C = model1.getC();
             Properties.Settings.Default.Save();
         }
@@ -139,15 +139,19 @@ namespace OOP_FOURTH_LAB_2
         public void setA(int a)
         {
            a = checkvalue(a);
-           if (a>C)
+            //if (a > C)
+            //{
+            //    C = a;
+            //}
+            if (a < C) 
             {
-                C = a;
+                A = a; 
             }
-           if (a>B)
+            if (a > B && a<C)
             {
                 B = a;
             }
-            A = a;
+            
             observers.Invoke(this, null);
         }
         public void setB(int b)
@@ -165,20 +169,21 @@ namespace OOP_FOURTH_LAB_2
             {
                 B = b;
             }
+            
             observers.Invoke(this, null);
         }
         public void setC(int c)
         {
             c = checkvalue(c);
-            if (c < A)
+            if (c > A)
             {
-                A = c;
+                C = c;
             }
             if (c < B)
             {
                 B = c;
             }
-            C = c;
+            
             observers.Invoke(this, null);
         }
         public int getA()

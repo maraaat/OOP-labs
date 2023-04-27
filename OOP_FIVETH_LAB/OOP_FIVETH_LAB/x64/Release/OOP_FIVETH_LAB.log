@@ -1,0 +1,6 @@
+﻿  First.cpp
+  OOP_FIVETH_LAB.cpp
+C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Boss.h(5,12): error C2011: Boss: переопределение типа "class"
+C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Boss.h(5): message : см. объявление "Boss"
+C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\OOP_FIVETH_LAB.cpp(15,7): error C2027: использование неопределенного типа "Boss"
+C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Boss.h(5): message : см. объявление "Boss"
