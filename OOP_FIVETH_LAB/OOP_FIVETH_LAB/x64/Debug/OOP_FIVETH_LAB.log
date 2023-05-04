@@ -1,4 +1,4 @@
 ﻿  OOP_FIVETH_LAB.cpp
-C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Third.h(109): warning C4172: возвращение адреса локальной или временной переменной : obj
-C:\Users\Asus\source\repos\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Third.h(115): warning C4172: возвращение адреса локальной или временной переменной : obj
-  OOP_FIVETH_LAB.vcxproj -> C:\Users\Asus\source\repos\OOP_FIVETH_LAB\x64\Debug\OOP_FIVETH_LAB.exe
+C:\Users\Asus\Documents\GitHub\OOP\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Third.h(109): warning C4172: возвращение адреса локальной или временной переменной : obj
+C:\Users\Asus\Documents\GitHub\OOP\OOP_FIVETH_LAB\OOP_FIVETH_LAB\Third.h(115): warning C4172: возвращение адреса локальной или временной переменной : obj
+  OOP_FIVETH_LAB.vcxproj -> C:\Users\Asus\Documents\GitHub\OOP\OOP_FIVETH_LAB\x64\Debug\OOP_FIVETH_LAB.exe
