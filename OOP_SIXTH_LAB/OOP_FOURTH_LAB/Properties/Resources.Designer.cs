@@ -83,6 +83,26 @@ namespace OOP_SIXTH_LAB.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap connect_icon_161112 {
+            get {
+                object obj = ResourceManager.GetObject("connect_icon_161112", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_save_4892790 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-save-4892790", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_палитра_художника_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-палитра-художника-48", resourceCulture);
@@ -116,6 +136,46 @@ namespace OOP_SIXTH_LAB.Properties {
         internal static System.Drawing.Bitmap icons8_треугольник_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-треугольник-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap load_39552 {
+            get {
+                object obj = ResourceManager.GetObject("load_39552", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap matric_binary_icon_161120 {
+            get {
+                object obj = ResourceManager.GetObject("matric_binary_icon_161120", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rightarrow_79765 {
+            get {
+                object obj = ResourceManager.GetObject("rightarrow_79765", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_78935 {
+            get {
+                object obj = ResourceManager.GetObject("save_78935", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
